@@ -2,11 +2,18 @@ import React from "react";
 import Title from "./Title";
 import { benefitItems } from "../constant/data";
 import { RiArrowRightUpLine } from "@remixicon/react";
+import { motion } from "motion/react";
+import * as variants from "../motion/animasi";
 
 function Benefits() {
   return (
     <section className="section">
-      <div className="container">
+      <motion.div
+        variants={variants.staggerContainer}
+        initial="hidden"
+        viewport={{ once: true }}
+        whileInView="show"
+        className="container">
         {/* title */}
         <Title
           title="Benefits"
@@ -17,7 +24,9 @@ function Benefits() {
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:mt-16">
           {benefitItems.map((item) => {
             return (
-              <div className="bg-white p-10 flex flex-col rounded-xl">
+              <motion.div
+                variants={variants.fadeInUp}
+                className="bg-white p-10 flex flex-col rounded-xl">
                 <div
                   className="bg-orange-75 w-[55%] h-24 flex items-center justify-center mx-auto rounded-xl mb-8"
                   key={item.id}>
@@ -36,11 +45,11 @@ function Benefits() {
                 <button className="mt-auto ml-auto border border-white-95 w-12 h-12 flex items-center justify-center rounded-md text-orange-50 transtition-colors hover:bg-orange-50 hover:text-white">
                   <RiArrowRightUpLine size={24} />
                 </button>
-              </div>
+              </motion.div>
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

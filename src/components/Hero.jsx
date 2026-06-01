@@ -3,6 +3,9 @@ import { heroLogos } from "../constant/data";
 import { RiPlayFill } from "@remixicon/react";
 // Ambil modul secara utuh
 import * as ReactFastMarquee from "react-fast-marquee";
+import { motion } from "motion/react";
+import * as variants from "../motion/animasi";
+
 // SOLUSI UTAMA: Mengambil komponen dari lapisan terdalam objek
 const Marquee =
   ReactFastMarquee.default?.default ||
@@ -12,20 +15,29 @@ const Marquee =
 function Hero() {
   return (
     <section>
-      <div className="container">
+      <motion.div
+        className="container"
+        variants={variants.staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}>
         {/* content */}
         <div className="mt-[50px] md:mt-20 text-center">
           {/* title */}
           <div className="relative max-w-max mx-auto pt-8 pl-8">
-            <span className="absolute top-0 left-0">
+            <motion.span
+              variants={variants.fadeInUp}
+              className="absolute top-0 left-0">
               <img
                 src="/Images/shape-1.png"
                 alt="Title shape"
                 width={39}
                 height={43}
               />
-            </span>
-            <div className="flex items-center bg-white border border-white-95 rounded-lg p-3.5 justify-center gap-2.5 max-w-max mx-auto flex-wrap text-center ">
+            </motion.span>
+            <motion.div
+              variants={variants.fadeInUp}
+              className="flex items-center bg-white border border-white-95 rounded-lg p-3.5 justify-center gap-2.5 max-w-max mx-auto flex-wrap text-center ">
               <span>
                 <img
                   src="/Images/shape-2.png"
@@ -38,25 +50,33 @@ function Hero() {
                 <span className="text-orange-50">Unlock</span> Your Potential
                 with Our
               </h1>
-            </div>
+            </motion.div>
           </div>
-          <p className="text-2xl font-medium mt-4 md:text-[28px]">
+          <motion.p
+            variants={variants.fadeInUp}
+            className="text-2xl font-medium mt-4 md:text-[28px]">
             with Online Design and Development Courses.
-          </p>
-          <p className="text-gray-600">
+          </motion.p>
+          <motion.p variants={variants.fadeInUp} className="text-gray-600">
             Learn from Industry Experts and Enhance Your Skills.
-          </p>
+          </motion.p>
           {/* btn Wrapper */}
           <div className="flex items-center justify-center gap-3 mt-12 flex-wrap">
-            <button className="primary-btn max-sm:w-[80%]">
+            <motion.button
+              variants={variants.fadeInUp}
+              className="primary-btn max-sm:w-[80%]">
               Explore Courses
-            </button>
-            <button className="secondary-btn max-sm:w-[80%]">
+            </motion.button>
+            <motion.button
+              variants={variants.fadeInUp}
+              className="secondary-btn max-sm:w-[80%]">
               View Pricing
-            </button>
+            </motion.button>
           </div>
           {/* client logos */}
-          <div className="mt-8 lg:mt-25 relative overflow-hidden">
+          <motion.div
+            variants={variants.fadeInUp}
+            className="mt-8 lg:mt-25 relative overflow-hidden">
             <Marquee pauseOnHover={true} gradient={false} speed={60}>
               {heroLogos.map((logo) => (
                 <div className="px-14 py-4" key={logo.id}>
@@ -74,10 +94,12 @@ function Hero() {
             <div className="absolute top-0 left-0 bg-linear-to-r from-white-97 via-white-97/80 to-transparent w-24 h-full z-10 pointer-events-none" />
             {/* right gradient */}
             <div className="absolute top-0 right-0 bg-linear-to-l from-white-97 via-white-97/80 to-transparent w-24 h-full z-10 pointer-events-none" />
-          </div>
+          </motion.div>
         </div>
         {/* banner */}
-        <figure className="relative rounded-xl overflow-hidden mt-10 md:mt-14 lg:mt-[50px] max-w-[920px] w-full h-[500px] mx-auto">
+        <motion.figure
+          variants={variants.fadeInUp}
+          className="relative rounded-xl overflow-hidden mt-10 md:mt-14 lg:mt-[50px] max-w-[920px] w-full h-[500px] mx-auto">
           <img
             src="/Images/hero-banner.png"
             alt="Banner"
@@ -94,8 +116,8 @@ function Hero() {
             </span>
           </div>
           {/* banner */}
-        </figure>
-      </div>
+        </motion.figure>
+      </motion.div>
     </section>
   );
 }

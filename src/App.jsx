@@ -6,6 +6,7 @@ import Benefits from "./components/Benefits";
 import Courses from "./components/Courses";
 import Testimoni from "./components/Testimoni";
 import Faq from "./components/Faq";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Testimoni />
         <Faq />
       </main>
+      <Footer />
     </>
   );
 }

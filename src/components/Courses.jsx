@@ -1,11 +1,18 @@
 import React from "react";
 import Title from "./Title";
 import { coursesSecItems } from "../constant/data";
+import { motion } from "motion/react";
+import * as variants from "../motion/animasi";
 
 const Courses = () => {
   return (
     <section className="section">
-      <div className="container">
+      <motion.div
+        variants={variants.staggerContainer}
+        initial="hidden"
+        viewport={{ once: true }}
+        whileInView="show"
+        className="container">
         {/* title */}
         <Title
           title=" Our Courses"
@@ -17,7 +24,8 @@ const Courses = () => {
         <div className="grid gap-5 lg:grid-cols-2 mt-8 lg:mt-12">
           {coursesSecItems.map((item) => (
             // card
-            <div
+            <motion.div
+              variants={variants.fadeInUp}
               className="bg-white p-7 lg:p-10 rounded-[10px] shadow-sm"
               key={item.id}>
               {/* image */}
@@ -53,10 +61,10 @@ const Courses = () => {
               <button className="bg-white-97 w-full p-3.5 rounded-md border border-white-97 hover:text-orange-50 hover:border-orange-50 transition font-medium">
                 Enroll Now
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
