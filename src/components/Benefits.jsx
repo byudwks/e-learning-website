@@ -10,8 +10,8 @@ function Benefits() {
         {/* title */}
         <Title
           title="Benefits"
-          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet ipsum non dapibus rutrum. Suspendisse tempus lacus tellus, eu faucibus ex egestas non. Nullam consequat posuere bibendum. Maecenas consequat, sem ac ultricies tincidunt."
-          link="View All"
+          text="Discover the advantages of learning with us."
+          link="View All Benefits"
         />
         {/* card wrapper */}
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:mt-16">

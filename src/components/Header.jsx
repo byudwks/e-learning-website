@@ -8,10 +8,10 @@ function Header() {
     setIsOpen(!isOpen);
   };
   return (
-    <header className="w-full py-5">
+    <header className="w-full py-5 ">
       <div className="container flex items-center justify-between border-b border-b-white-95 pb-5">
         {/* logo  */}
-        <a href="#=" className="logo">
+        <a href="#" className="">
           <img src="/Images/logo.png  " alt="Logo" width={170} height={50} />
         </a>
 
@@ -46,7 +46,7 @@ function Header() {
         </button>
 
         {/* lg menu */}
-        <div className="max-lg:hidden flex items-center gap-x-10">
+        <div className="max-lg:hidden flex items-center gap-x-10 ">
           <ul className="flex items-center gap-6">
             {navItems.map((item) => (
               <li key={item.id}>
